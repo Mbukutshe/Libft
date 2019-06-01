@@ -6,12 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 17:11:24 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/01 16:09:06 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft.h"
-#include <stdlib.h>
 
 int			ft_rows(char *s, char c)
 {
@@ -70,39 +69,47 @@ char		**ft_allocate(char **arr, int columns, int rows)
 	return (arry);
 }
 
+char		**ft_array(char **s, char *str, char c, int rows)
+{
+	char	**array;
+	char	*temp;
+	int		i;
+	int		j;
+
+	array = s;
+	temp = str;
+	i = 0;
+	while (temp[i] != '\0')
+	{
+		j = 0;
+		while (temp[i] == c)
+			i++;
+		while ((temp[i] != c) && (temp[i] != '\0'))
+		{
+			*(*(array + rows) + j) = temp[i];
+			j++;
+			i++;
+		}
+		*(*(array + rows) + j) = '\0';
+		rows++;
+	}
+	array[++rows] = 0;
+	return (array);
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
 	char	*str;
 	char	**array;
-	char	**temp;
 	int		rows;
-	int		i;
-	int		j;
 
-	if (!s || !c)
-		return (NULL);
 	str = (char *)s;
 	rows = ft_rows(str, c);
 	array = (char **)malloc((rows + 1) * sizeof(char **));
+	if (!array)
+		return (NULL);
 	array = ft_allocate(array, ft_columns(str, c), rows);
-	temp = array;
-	i = 0;
 	rows = 0;
-	j = 0;
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (str[i] == c)
-			i++;
-		while ((str[i] != c) && (str[i] != '\0'))
-		{
-			*(*(temp + rows) + j) = str[i];
-			j++;
-			i++;
-		}
-		*(*(temp + rows) + j) = '\0';
-		rows++;
-	}
-	*(*(temp + rows) + j) = '\0';
+	array = ft_array(array, str, c, rows);
 	return (array);
 }

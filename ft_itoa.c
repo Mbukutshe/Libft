@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:37:40 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 17:12:40 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/01 16:24:47 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,12 @@ char		*ft_change_order(char *s)
 	return (str);
 }
 
-char		*ft_itoa(int n)
+char		*ft_aray(char *s, int sign, int n)
 {
-	char	*str;
 	char	*temp;
-	int		sign;
 	int		mod;
 
-	sign = 1;
-	if (n < 0)
-	{
-		sign = -1;
-		n = n * -1;
-	}
-	str = (char *)malloc((ft_size(n) + 1) * sizeof(char *));
-	if (str == NULL)
-		return (NULL);
-	temp = str;
+	temp = s;
 	while (n > 0)
 	{
 		mod = n % 10;
@@ -81,5 +70,24 @@ char		*ft_itoa(int n)
 		temp++;
 	}
 	*temp = '\0';
+	return (temp);
+}
+
+char		*ft_itoa(int n)
+{
+	char	*str;
+	char	*temp;
+	int		sign;
+
+	sign = 1;
+	if (n < 0)
+	{
+		sign = -1;
+		n = n * -1;
+	}
+	str = (char *)malloc((ft_size(n) + 1) * sizeof(char *));
+	if (str == NULL)
+		return (NULL);
+	temp = ft_aray(str, sign, n);
 	return (ft_change_order(str));
 }
