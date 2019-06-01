@@ -6,12 +6,19 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:16:36 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 17:19:08 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/01 14:13:38 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 	#define LIBFT_H
+	
+	#include <stdio.h>
+	#include <unistd.h>
+	#include <stdlib.h>
+	#include <string.h>
+	#include <stddef.h>
+
 	void	*ft_memset(void *b, int c, size_t len);
 	void	ft_bzero(void *s, size_t n);
 	void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
