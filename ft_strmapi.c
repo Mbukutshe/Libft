@@ -6,12 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 10:30:10 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 16:35:20 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/02 13:21:55 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
-#include <stdlib.h>
+#include "libft.h"
 
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
