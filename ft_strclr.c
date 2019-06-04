@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 09:11:43 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 16:22:36 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/02 13:19:15 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 void		ft_strclr(char *s)
 {
