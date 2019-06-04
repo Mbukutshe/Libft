@@ -6,29 +6,26 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 16:58:57 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:15:33 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:51:27 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
-#include <string.h>
+#include "libft.h"
 
 char		*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char	*str;
-	char	*dest;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
-	str = (char *)src;
-	dest = (char *)dst;
-	if (src == NULL)
-		return (NULL);
-	while (++i < len)
+	while (src[i] != '\0' && i < len)
 	{
-		*dest = *str;
-		dest++;
-		str++;
+		dst[i] = src[i];
+		i++;
 	}
-	return (dest);
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

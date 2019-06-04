@@ -6,27 +6,25 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 16:21:25 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:14:37 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:51:04 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
-#include <string.h>
+#include "libft.h"
 
 char		*ft_strcpy(char *dst, const char *src)
 {
-	char	*str;
-	char	*dest;
+	unsigned char	*str;
+	unsigned char	*dest;
 
-	dest = dst;
-	str = (char *)src;
-	if (str == NULL)
-		return (NULL);
+	dest = (unsigned char *)dst;
+	str = (unsigned char *)src;
 	while (*str)
 	{
 		*dest = *str;
 		dest++;
 		str++;
 	}
+	*dest = '\0';
 	return (dst);
 }

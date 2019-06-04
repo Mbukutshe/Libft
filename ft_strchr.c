@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 13:09:28 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/03 17:23:11 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:53:03 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char		*ft_strchr(const char *str, int c)
 	char	*s;
 
 	s = (char *)str;
-	if (!s)
-		return (NULL);
 	while (*s)
 	{
 		if (*s == c)
