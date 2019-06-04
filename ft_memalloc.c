@@ -6,21 +6,19 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 08:31:49 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:53:06 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/04 11:59:08 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "Libft.h"
-#include <string.h>
+#include "libft.h"
 
 void		*ft_memalloc(size_t size)
 {
 	void	*space;
 
-	space = malloc(size * sizeof(void *));
+	space = malloc(size);
 	if (space == NULL)
 		return (NULL);
-	ft_memset(space, '0', size);
+	space = ft_memset(space, 0, size);
 	return (space);
 }
