@@ -6,13 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 12:08:30 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:11:02 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:38:17 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -20,19 +18,18 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*str2;
 	size_t			i;
 
-	i = -1;
+	i = 0;
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	if (str1 == NULL || str2 == NULL)
-		return (0);
-	while (++i < n)
+	while (i < n)
 	{
-		if (*str1 > *str2)
-			return (1);
-		else if (*str1 < *str2)
-			return (-1);
-		str1++;
-		str2++;
+		if (str1[i] > str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		else if (str1[i] < str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
 	}
+	if (str1 != '\0' && i != n)
+		return (-1);
 	return (0);
 }
