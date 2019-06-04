@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 10:45:45 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 16:37:12 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/02 13:22:33 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int			ft_strequ(char const *s1, char const *s2)
 {
