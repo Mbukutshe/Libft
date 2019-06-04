@@ -6,34 +6,33 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:20:18 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:09:34 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/04 15:12:29 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *restrict d, const void *restrict s, int c, size_t n)
 {
-	char	*str;
-	char	*src;
-	size_t	i;
+	unsigned char	*str;
+	unsigned char	*src;
+	size_t			i;
 
 	i = -1;
-	str = (char *)d;
-	src = (char *)s;
-	if (!src)
+	str = (unsigned char *)d;
+	src = (unsigned char *)s;
+	if (str == NULL && src == NULL)
 		return (NULL);
-	while (++i < n)
+	if (n > 0)
 	{
-		*str = *src;
-		if (*src == (unsigned char)c)
+		while (++i < n)
 		{
-			return (str);
+			*str = *src;
+			if (*src == (unsigned char)c)
+				return ((unsigned char *)d + i + 1);
+			str++;
+			src++;
 		}
-		str++;
-		src++;
 	}
 	return (NULL);
 }
