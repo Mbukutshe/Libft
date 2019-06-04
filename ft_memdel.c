@@ -6,13 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 08:39:00 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:53:42 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/02 13:16:49 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "Libft.h"
-#include <string.h>
+#include "libft.h"
 
 void		ft_memdel(void **ap)
 {
