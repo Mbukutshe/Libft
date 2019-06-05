@@ -6,48 +6,54 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:19:50 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 17:06:17 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/05 16:48:53 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
-#include <stdlib.h>
+#include "libft.h"
 
-int			ft_condition(char *str, int i, int len)
+int			ft_start(const char *str, int i)
 {
 	char	*ptr;
 
 	ptr = (char *)str;
-	if (ptr[i] == ' ' || ptr[i] == '\n' || ptr[i] == '\t')
-		if (i == 0 || i == len - 1)
-			return (0);
-	return (1);
+	 while (ptr[i] == ' ' || ptr[i] == '\n' || ptr[i] == '\t')
+		i++;
+	return (i);
+}
+
+int			ft_end(const char *str, int i)
+{
+	char	*ptr;
+
+	ptr = (char *)str;
+	while (ptr[i] == ' ' || ptr[i] == '\n' || ptr[i] == '\t')
+		i--;
+	return (i);
 }
 
 char		*ft_strtrim(char const *s)
 {
 	char	*str;
-	char	*ptr;
 	char	*temp;
-	int		i;
 	int		len;
+	int		i;
+	int		j;
 
-	i = -1;
 	if (s == NULL)
 		return (NULL);
-	ptr = (char *)s;
-	len = (int)ft_strlen(ptr) + 1;
-	str = (char *)malloc(len * sizeof(char *));
+	len = (int)ft_strlen(s);
+	i = ft_start(s, 0);
+	j = ft_end(s, len - 1);
+	str = (char *)malloc((len) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	temp = str;
-	while (ptr[++i] != '\0')
+	while (s[i] && i <= j)
 	{
-		if (ft_condition(ptr, i, len))
-		{
-			*temp = ptr[i];
-			temp++;
-		}
+		*temp = s[i];
+		temp++;
+		i++;
 	}
 	*temp = '\0';
 	return (str);
