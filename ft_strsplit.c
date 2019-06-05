@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/01 16:09:06 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/05 17:24:20 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int			ft_rows(char *s, char c)
 {
@@ -54,7 +54,7 @@ int			ft_columns(char *s, char c)
 			len = 0;
 		}
 	}
-	return (size + 1);
+	return (size);
 }
 
 char		**ft_allocate(char **arr, int columns, int rows)
@@ -64,9 +64,9 @@ char		**ft_allocate(char **arr, int columns, int rows)
 
 	i = -1;
 	arry = arr;
-	while (++i < rows)
-		arry[i] = (char *)malloc(columns * sizeof(char *));
-	return (arry);
+	while (++i <= rows)
+		arry[i] = (char *)malloc(columns * sizeof(char));
+	return (arr);
 }
 
 char		**ft_array(char **s, char *str, char c, int rows)
@@ -82,7 +82,7 @@ char		**ft_array(char **s, char *str, char c, int rows)
 	while (temp[i] != '\0')
 	{
 		j = 0;
-		while (temp[i] == c)
+		while (temp[i] == c && temp[i] != '\0')
 			i++;
 		while ((temp[i] != c) && (temp[i] != '\0'))
 		{
@@ -93,8 +93,8 @@ char		**ft_array(char **s, char *str, char c, int rows)
 		*(*(array + rows) + j) = '\0';
 		rows++;
 	}
-	array[++rows] = 0;
-	return (array);
+	array[rows] = 0;
+	return (s);
 }
 
 char		**ft_strsplit(char const *s, char c)
@@ -106,7 +106,7 @@ char		**ft_strsplit(char const *s, char c)
 	str = (char *)s;
 	rows = ft_rows(str, c);
 	array = (char **)malloc((rows + 1) * sizeof(char **));
-	if (!array)
+	if (array == NULL)
 		return (NULL);
 	array = ft_allocate(array, ft_columns(str, c), rows);
 	rows = 0;
