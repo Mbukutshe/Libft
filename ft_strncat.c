@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 12:12:50 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:20:51 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/05 09:04:10 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char		*ft_strncat(char *s1, const char *s2, size_t n)
 		src++;
 		i++;
 	}
+	dst[pos] = '\0';
 	return (dst);
 }
