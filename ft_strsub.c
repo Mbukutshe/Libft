@@ -6,33 +6,32 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:15:20 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 16:38:35 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/05 13:17:38 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	char	*ptr;
 	char	*temp;
+	size_t	i;
 
+	i = 0;
 	if (s == NULL)
 		return (NULL);
 	str = (char *)s + start;
-	ptr = (char *)malloc((len + 1) * sizeof(char *));
+	ptr = (char *)malloc((len + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	temp = ptr;
-	while (*str && start < len)
+	while (str[i] != '\0' && i < len)
 	{
-		*temp = *str;
+		*temp = str[i];
 		temp++;
-		str++;
-		start++;
+		i++;
 	}
 	*temp = '\0';
 	return (ptr);
