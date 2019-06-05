@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:16:36 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/01 14:13:38 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/05 10:02:23 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 	#include <unistd.h>
 	#include <stdlib.h>
 	#include <string.h>
+	#include <limits.h>
 	#include <stddef.h>
 
 	void	*ft_memset(void *b, int c, size_t len);
