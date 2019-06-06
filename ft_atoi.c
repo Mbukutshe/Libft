@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:03:57 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/05 10:12:29 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 15:32:12 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_atoi(const char *str)
 {
 	int i;
 	int sign;
-	int num;
+	unsigned long num;
 
 	i = 0;
 	sign = 1;
@@ -31,7 +31,7 @@ int		ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (num > INT_MAX && str[i] - '0' > 7)
+		if (num > LONG_MAX && str[i] - '0' > 7)
 		{
 			if (sign == 1)
 				return (INT_MAX);

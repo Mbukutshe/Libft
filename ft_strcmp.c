@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:54:38 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/05 09:13:38 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 10:14:01 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {

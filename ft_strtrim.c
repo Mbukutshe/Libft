@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:19:50 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/05 16:48:53 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 12:43:44 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			ft_start(const char *str, int i)
 	char	*ptr;
 
 	ptr = (char *)str;
-	 while (ptr[i] == ' ' || ptr[i] == '\n' || ptr[i] == '\t')
+	 while ((ptr[i] == ' ' || ptr[i] == '\n' || ptr[i] == '\t') && ( ptr[i] != '\0'))
 		i++;
 	return (i);
 }
@@ -45,7 +45,7 @@ char		*ft_strtrim(char const *s)
 	len = (int)ft_strlen(s);
 	i = ft_start(s, 0);
 	j = ft_end(s, len - 1);
-	str = (char *)malloc((len) * sizeof(char));
+	str = (char *)malloc((len - (len - j + 1) + 2) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	temp = str;

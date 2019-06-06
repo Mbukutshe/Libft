@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 11:34:46 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:16:41 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 10:11:03 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 char		*ft_strcat(char *s1, const char *s2)
 {

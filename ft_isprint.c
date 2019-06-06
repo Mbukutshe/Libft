@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:50:38 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:50:31 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 10:16:28 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int		ft_isprint(int c)
 {

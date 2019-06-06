@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:54:01 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:51:49 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 10:16:51 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int		ft_toupper(int c)
 {

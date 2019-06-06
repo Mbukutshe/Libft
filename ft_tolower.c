@@ -6,11 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:00:50 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 15:52:33 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 10:17:07 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 int		ft_tolower(int c)
 {
