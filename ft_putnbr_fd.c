@@ -6,19 +6,18 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:06:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 17:19:03 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 11:53:40 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "Libft.h"
+#include "libft.h"
 
 void		ft_putnbr_fd(int n, int fd)
 {
 	char	*str;
 
 	str = ft_itoa(n);
-	if (!str)
+	if (str == NULL)
 		return ;
-	ft_putstr_fd(str, fd);
+	write((long)fd, str, ft_strlen(str));
 }
