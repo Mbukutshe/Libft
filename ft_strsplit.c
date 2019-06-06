@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/05 17:24:20 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 17:11:18 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,20 @@ int			ft_rows(char *s, char c)
 	int		len;
 	char	*str;
 
-	len = 1;
+	len = 0;
 	i = 0;
 	str = s;
-	while (str[i] != '\0')
+	while (str[++i] != '\0')
 	{
-		if ((str[i] == c) && !(i == 0 || i == (int)ft_strlen(s)))
+		len++;
+		while (str[i] == c)
 		{
-			if (str[i - 1] != c)
-				len++;
+			i++;
 		}
-		i++;
+		while (str[i] != c)
+		{
+			i++;
+		}
 	}
 	return (len);
 }
@@ -62,10 +65,13 @@ char		**ft_allocate(char **arr, int columns, int rows)
 	char	**arry;
 	int		i;
 
-	i = -1;
+	i = 0;
 	arry = arr;
-	while (++i <= rows)
-		arry[i] = (char *)malloc(columns * sizeof(char));
+	while (i <= rows)
+	{
+		arry[i] = (char *)malloc((columns + 1) * sizeof(char));
+		i++;
+	}
 	return (arr);
 }
 
@@ -82,7 +88,7 @@ char		**ft_array(char **s, char *str, char c, int rows)
 	while (temp[i] != '\0')
 	{
 		j = 0;
-		while (temp[i] == c && temp[i] != '\0')
+		while (temp[i] == c)
 			i++;
 		while ((temp[i] != c) && (temp[i] != '\0'))
 		{
@@ -90,8 +96,11 @@ char		**ft_array(char **s, char *str, char c, int rows)
 			j++;
 			i++;
 		}
-		*(*(array + rows) + j) = '\0';
-		rows++;
+		if (temp[i] != '\0')
+		{
+			*(*(array + rows) + j) = '\0';
+			rows++;
+		}
 	}
 	array[rows] = 0;
 	return (s);
@@ -104,12 +113,13 @@ char		**ft_strsplit(char const *s, char c)
 	int		rows;
 
 	str = (char *)s;
+	if (str == NULL)
+		return (NULL);
 	rows = ft_rows(str, c);
-	array = (char **)malloc((rows + 1) * sizeof(char **));
+	array = (char **)malloc((rows + 1)  * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
 	array = ft_allocate(array, ft_columns(str, c), rows);
-	rows = 0;
-	array = ft_array(array, str, c, rows);
+	array = ft_array(array, str, c, 0);
 	return (array);
 }
