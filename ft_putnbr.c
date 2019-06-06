@@ -6,12 +6,11 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 15:37:40 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/05/31 17:15:21 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/06 11:50:05 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "Libft.h"
+#include "libft.h"
 
 void		ft_putnbr(int n)
 {
