@@ -6,18 +6,61 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:06:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/06 11:53:40 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/07 11:54:34 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void		ft_output(char *s, int fd)
+{
+	int i;
+
+	i = ft_strlen(s);
+	while (--i > -1)
+		ft_putchar_fd(s[i], fd);
+	return ;
+}
+
+void		ft_nbrs(char *s, int n)
+{
+	int		i;
+	int		mod;
+
+	i = -1;
+	while (n != 0)
+	{
+		mod = n % 10;
+		if (mod > 9)
+			n /= 10;
+		else
+		{
+			s[++i] = mod + '0';
+			n /= 10;
+		}
+	}
+	s[++i] = '\0';
+}
+
 void		ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	char	s[10];
 
-	str = ft_itoa(n);
-	if (str == NULL)
+	if (n <= -2147483647)
+	{
+		ft_putstr_fd("-2147483648", fd);
 		return ;
-	write((long)fd, str, ft_strlen(str));
+	}
+	if (n >= 2147483647)
+	{
+		ft_putstr_fd("2147483647", fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	ft_nbrs(s, n);
+	ft_output(s, fd);
 }
