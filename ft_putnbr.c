@@ -6,18 +6,61 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 15:37:40 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/06 14:39:05 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/07 13:48:23 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void		ft_print_array(char *s)
+{
+	int	i;
+
+	i = ft_strlen(s);
+	while (--i > -1)
+		ft_putchar(s[i]);
+	return ;
+}
+
+void		ft_nbr(char *s, int n)
+{
+	int		i;
+	int		mod;
+
+	i = -1;
+	while (n != 0)
+	{
+		mod = n % 10;
+		if (mod > 9)
+			n = n / 10;
+		else
+		{
+			s[++i] = mod + '0';
+			n = n / 10;
+		}
+	}
+	s[++i] = '\0';
+}
+
 void		ft_putnbr(int n)
 {
-	char	*str;
+	char	s[10];
 
-	str = ft_itoa(n);
-	if (str == NULL)
+	if (n <= -2147483647)
+	{
+		ft_putstr("-2147483648");
 		return ;
-	ft_putstr(str);
+	}
+	if (n == 2147483647)
+	{
+		ft_putstr("2147483647");
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n *= -1;
+	}
+	ft_nbr(s, n);
+	ft_print_array(s);
 }
