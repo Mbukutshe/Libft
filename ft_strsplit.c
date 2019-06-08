@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/06 17:11:18 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/08 15:42:50 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,16 @@ int			ft_rows(char *s, char c)
 	char	*str;
 
 	len = 0;
-	i = 0;
+	i = -1;
 	str = s;
 	while (str[++i] != '\0')
 	{
-		len++;
 		while (str[i] == c)
 		{
 			i++;
 		}
-		while (str[i] != c)
-		{
-			i++;
-		}
+		if (str[i] != '\0' && i != 0 && str[i - 1] == c && str[i] != c)
+			len++;
 	}
 	return (len);
 }
@@ -60,66 +57,58 @@ int			ft_columns(char *s, char c)
 	return (size);
 }
 
-char		**ft_allocate(char **arr, int columns, int rows)
+char		*ft_allocate(int col, char *str, int pos)
 {
-	char	**arry;
+	char	*arr;
 	int		i;
 
-	i = 0;
-	arry = arr;
-	while (i <= rows)
+	i = -1;
+	arr = (char *)malloc(col + 1 * sizeof(char));
+	if (arr == NULL)
+		return (NULL);
+	while (++i < col)
 	{
-		arry[i] = (char *)malloc((columns + 1) * sizeof(char));
-		i++;
+		arr[i] = str[pos++];
 	}
+	arr[i] = '\0';
 	return (arr);
 }
 
-char		**ft_array(char **s, char *str, char c, int rows)
+char		**ft_array(char **s, char const *str, char c)
 {
-	char	**array;
-	char	*temp;
 	int		i;
 	int		j;
+	int		row;
 
-	array = s;
-	temp = str;
 	i = 0;
-	while (temp[i] != '\0')
+	row = 0;
+	while (str[i])
 	{
-		j = 0;
-		while (temp[i] == c)
+		while (str[i] == c)
 			i++;
-		while ((temp[i] != c) && (temp[i] != '\0'))
-		{
-			*(*(array + rows) + j) = temp[i];
-			j++;
+		j = i;
+		while (str[i] != '\0' && str[i] != c)
 			i++;
-		}
-		if (temp[i] != '\0')
-		{
-			*(*(array + rows) + j) = '\0';
-			rows++;
-		}
+		if (i > j)
+			s[row++] = ft_allocate(i - j, (char *)str, j);
 	}
-	array[rows] = 0;
+	s[row] = 0;
 	return (s);
 }
 
 char		**ft_strsplit(char const *s, char c)
 {
-	char	*str;
 	char	**array;
-	int		rows;
+	int		ro;
+	int		col;
 
-	str = (char *)s;
-	if (str == NULL)
+	if (s == NULL || !c)
 		return (NULL);
-	rows = ft_rows(str, c);
-	array = (char **)malloc((rows + 1)  * sizeof(char *));
+	ro = ft_rows((char *)s, (const char)c);
+	col = ft_columns((char *)s, (const char)c);
+	array = (char **)malloc(ro * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	array = ft_allocate(array, ft_columns(str, c), rows);
-	array = ft_array(array, str, c, 0);
+	array = ft_array(array, (char const *)s, c);
 	return (array);
 }
