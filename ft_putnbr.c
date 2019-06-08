@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 15:37:40 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/07 13:48:23 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/08 16:29:59 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ void		ft_nbr(char *s, int n)
 
 void		ft_putnbr(int n)
 {
-	char	s[10];
+	char	s[20];
 
 	if (n <= -2147483647)
 	{
 		ft_putstr("-2147483648");
 		return ;
 	}
-	if (n == 2147483647)
+	if (n >= 2147483647)
 	{
 		ft_putstr("2147483647");
 		return ;
