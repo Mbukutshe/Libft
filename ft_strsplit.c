@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/08 15:42:50 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/08 16:01:08 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char		**ft_strsplit(char const *s, char c)
 		return (NULL);
 	ro = ft_rows((char *)s, (const char)c);
 	col = ft_columns((char *)s, (const char)c);
-	array = (char **)malloc(ro * sizeof(char *));
+	array = (char **)malloc((ro + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
 	array = ft_array(array, (char const *)s, c);
