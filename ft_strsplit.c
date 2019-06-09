@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/08 16:01:08 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/09 14:20:43 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,6 @@ int			ft_rows(char *s, char c)
 			len++;
 	}
 	return (len);
-}
-
-int			ft_columns(char *s, char c)
-{
-	int		i;
-	int		len;
-	int		size;
-	char	*str;
-
-	len = 0;
-	i = -1;
-	size = 0;
-	str = s;
-	while (str[++i] != '\0')
-	{
-		if (str[i] != c)
-			len++;
-		else if (len > size)
-		{
-			size = len;
-			len = 0;
-		}
-	}
-	return (size);
 }
 
 char		*ft_allocate(int col, char *str, int pos)
@@ -100,12 +76,10 @@ char		**ft_strsplit(char const *s, char c)
 {
 	char	**array;
 	int		ro;
-	int		col;
 
 	if (s == NULL || !c)
 		return (NULL);
 	ro = ft_rows((char *)s, (const char)c);
-	col = ft_columns((char *)s, (const char)c);
 	array = (char **)malloc((ro + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
