@@ -6,13 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:19:50 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/07 07:54:17 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 12:51:58 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_start(const char *str, int i)
+static int			ft_start(const char *str, int i)
 {
 	char	*p;
 
@@ -22,7 +22,7 @@ int			ft_start(const char *str, int i)
 	return (i);
 }
 
-int			ft_end(const char *str, int i)
+static int			ft_end(const char *str, int i)
 {
 	char	*ptr;
 
