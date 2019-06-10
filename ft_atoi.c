@@ -6,13 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:03:57 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/10 10:44:51 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 12:49:56 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_max(int sign)
+static int		ft_max(int sign)
 {
 	if (sign == 1)
 		return (-1);
