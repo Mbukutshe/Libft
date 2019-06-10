@@ -6,13 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/09 14:20:43 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:01:04 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_rows(char *s, char c)
+static int	ft_rows(char *s, char c)
 {
 	int		i;
 	int		len;
@@ -33,7 +33,7 @@ int			ft_rows(char *s, char c)
 	return (len);
 }
 
-char		*ft_allocate(int col, char *str, int pos)
+static char	*ft_allocate(int col, char *str, int pos)
 {
 	char	*arr;
 	int		i;
@@ -50,7 +50,7 @@ char		*ft_allocate(int col, char *str, int pos)
 	return (arr);
 }
 
-char		**ft_array(char **s, char const *str, char c)
+static char	**ft_array(char **s, char const *str, char c)
 {
 	int		i;
 	int		j;
