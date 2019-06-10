@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:55:07 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/10 13:01:04 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 16:44:35 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_rows(char *s, char c)
 	int		len;
 	char	*str;
 
-	len = 0;
+	len = 1;
 	i = -1;
 	str = s;
 	while (str[++i] != '\0')
@@ -33,18 +33,18 @@ static int	ft_rows(char *s, char c)
 	return (len);
 }
 
-static char	*ft_allocate(int col, char *str, int pos)
+static char	*ft_allocate(int col, char *str)
 {
 	char	*arr;
 	int		i;
 
-	i = -1;
+	i = col;
 	arr = (char *)malloc(col + 1 * sizeof(char));
 	if (arr == NULL)
 		return (NULL);
-	while (++i < col)
+	while (--col > -1)
 	{
-		arr[i] = str[pos++];
+		arr[col] = str[col];
 	}
 	arr[i] = '\0';
 	return (arr);
@@ -66,7 +66,7 @@ static char	**ft_array(char **s, char const *str, char c)
 		while (str[i] != '\0' && str[i] != c)
 			i++;
 		if (i > j)
-			s[row++] = ft_allocate(i - j, (char *)str, j);
+			s[row++] = ft_allocate(i - j, ((char *)str + j));
 	}
 	s[row] = 0;
 	return (s);
