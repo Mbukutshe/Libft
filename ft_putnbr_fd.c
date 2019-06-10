@@ -6,13 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:06:08 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/07 11:54:34 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:16:54 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_output(char *s, int fd)
+static void	ft_output(char *s, int fd)
 {
 	int i;
 
@@ -22,7 +22,7 @@ void		ft_output(char *s, int fd)
 	return ;
 }
 
-void		ft_nbrs(char *s, int n)
+static void	ft_nbrs(char *s, int n)
 {
 	int		i;
 	int		mod;
