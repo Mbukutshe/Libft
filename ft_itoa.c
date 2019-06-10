@@ -6,13 +6,13 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:37:40 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/06 12:15:37 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:09:44 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_size(long n)
+static int	ft_size(long n)
 {
 	int c;
 
@@ -25,7 +25,7 @@ int			ft_size(long n)
 	return (c + 1);
 }
 
-char		*ft_change_order(char *s)
+static char	*ft_change_order(char *s)
 {
 	char	*str;
 	char	*sr;
@@ -47,7 +47,7 @@ char		*ft_change_order(char *s)
 	return (str);
 }
 
-char		*ft_aray(char *s, int sign, long n)
+static char	*ft_aray(char *s, int sign, long n)
 {
 	char	*temp;
 	int		mod;
