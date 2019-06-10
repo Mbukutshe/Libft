@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Libft.h                                            :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 13:16:36 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/05 13:33:46 by kmbukuts         ###   ########.fr       */
+/*   Created: 2019/06/10 09:40:11 by kmbukuts          #+#    #+#             */
+/*   Updated: 2019/06/10 09:58:01 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-	#define LIBFT_H
-	
-	#include <stdio.h>
-	#include <unistd.h>
-	#include <stdlib.h>
-	#include <string.h>
-	#include <limits.h>
-	#include <stddef.h>
+# define LIBFT_H
+
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+# include <limits.h>
+# include <stddef.h>
 
 	void	*ft_memset(void *b, int c, size_t len);
 	void	ft_bzero(void *s, size_t n);
