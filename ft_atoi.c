@@ -6,17 +6,25 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:03:57 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/07 14:08:47 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 10:44:51 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int		ft_max(int sign)
+{
+	if (sign == 1)
+		return (-1);
+	else
+		return (0);
+}
+
 int		ft_atoi(const char *str)
 {
-	int i;
-	unsigned long sign;
-	unsigned long num;
+	int				i;
+	unsigned long	sign;
+	unsigned long	num;
 
 	i = 0;
 	sign = 1;
@@ -32,12 +40,7 @@ int		ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		if (num > LONG_MAX && str[i] - '0' > 7)
-		{
-			if (sign == 1)
-				return (-1);
-			else
-				return (0);
-		}
+			return (ft_max(sign));
 		num = (num * 10) + str[i] - '0';
 		i++;
 	}
