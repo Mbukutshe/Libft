@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 16:05:15 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/06 10:10:25 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 12:47:08 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	s = malloc(ft_strlen(s1) + 1);
+	s = (char *)malloc((ft_strlen(s1) + 1) * sizeof(*s));
 	if (s == NULL)
 		return (NULL);
 	while (s1[i])
