@@ -6,7 +6,7 @@
 /*   By: kmbukuts <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 14:37:40 by kmbukuts          #+#    #+#             */
-/*   Updated: 2019/06/10 13:09:44 by kmbukuts         ###   ########.fr       */
+/*   Updated: 2019/06/10 16:37:32 by kmbukuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,22 @@ static char	*ft_aray(char *s, int sign, long n)
 	return (s);
 }
 
+static char	*ft_one(char *s, int sign, int nbr)
+{
+	if (sign < 0)
+	{
+		s[0] = '-';
+		s[1] = nbr + '0';
+		s[2] = '\0';
+	}
+	else
+	{
+		s[0] = nbr + '0';
+		s[1] = '\0';
+	}
+	return (s);
+}
+
 char		*ft_itoa(int n)
 {
 	char	*str;
@@ -91,11 +107,7 @@ char		*ft_itoa(int n)
 		return (NULL);
 	temp = str;
 	if (nbr >= 0 && nbr < 10)
-	{
-		temp[0] = nbr + '0';
-		temp[1] = '\0';
-		return (str);
-	}
+		return (ft_one(temp, sign, nbr));
 	temp = ft_aray(str, sign, nbr);
 	return (ft_change_order(str));
 }
